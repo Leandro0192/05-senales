@@ -12,4 +12,4 @@ int main ()
 {
    sleep(5);
    
-   exit(5);}
+   exit(0);}

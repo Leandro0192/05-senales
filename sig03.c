@@ -1,4 +1,4 @@
-
+								/*Ejercicio 4*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,17 +6,18 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-/*
-void manejador_senial(int a){
-   
+
+void manejador(){
+
+	write(STDOUT_FILENO,"Me rehuso a terminar\n",sizeof("Me rehuso a terminar\n"));   
 }
-*/
+
 
 int main ()
 {
   //signal(SIGKILL, SIG_IGN);
-  //signal(SIGINT, SIG_IGN);//Ctrl + c
-  signal(SIGSTOP, SIG_IGN);  //Ctrl + Z
+  signal(SIGINT, manejador);//Ctrl + c
+  //signal(SIGSTOP, SIG_IGN);  //Ctrl + Z
    
    printf("Proceso PID = %d\n", getpid());   
    
